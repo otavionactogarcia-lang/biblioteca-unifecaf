@@ -1,0 +1,743 @@
+/* =========================================================================
+   Biblioteca Digital UniFECAF — Folha de estilos
+   Abordagem MOBILE-FIRST: o layout base é o do smartphone e, conforme a tela
+   cresce, as media queries (min-width) reorganizam os blocos.
+
+   Sumário
+   1. Variáveis (paleta, fonte, espaçamentos)
+   2. Reset e base
+   3. Utilitários (container, acessibilidade)
+   4. Botões
+   5. Cabeçalho e menu
+   6. Hero
+   7. Seções e títulos
+   8. Sobre a biblioteca
+   9. Banner
+   10. Nossos livros
+   11. As unidades
+   12. Contatos
+   13. Rodapé
+   14. Media queries (tablet e desktop)
+   15. Preferências do usuário (movimento reduzido)
+   ========================================================================= */
+
+
+/* 1. VARIÁVEIS ------------------------------------------------------------
+   Todas as cores ficam em um só lugar: para mudar a identidade visual basta
+   alterar estes valores. */
+:root {
+  /* Paleta inspirada na identidade da UniFECAF (azul institucional + verde) */
+  --azul: #0B5CAB;
+  --azul-escuro: #083D73;
+  --navy: #061F3A;
+  --verde: #2BB673;
+  --claro: #EAF1F8;
+  --texto: #1B2A3A;
+  --texto-claro: #E3ECF6;
+
+  /* Fonte: pilha de fontes do sistema (rápida, legível e sem downloads) */
+  --fonte: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+
+  --raio: 12px;
+  --sombra: 0 8px 22px rgba(3, 19, 37, 0.28);
+  --espaco-secao: clamp(2.75rem, 7vw, 5rem);
+}
+
+
+/* 2. RESET E BASE --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;      /* padding e borda entram no cálculo da largura */
+}
+
+html {
+  scroll-behavior: smooth;     /* rolagem suave ao clicar no menu */
+  scroll-padding-top: 7rem;    /* evita que o menu fixo cubra o título da seção */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: #fff;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;             /* imagem nunca ultrapassa o espaço disponível */
+  height: auto;                /* mantém a proporção: sem distorção */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* 3. UTILITÁRIOS ---------------------------------------------------------- */
+
+/* Centraliza o conteúdo e limita a largura em telas grandes */
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+/* Link de atalho: só aparece quando recebe foco do teclado */
+.pular-menu {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  transition: top 0.2s;
+}
+
+.pular-menu:focus {
+  top: 1rem;
+}
+
+/* Indicador de foco visível para navegação por teclado (acessibilidade) */
+:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+.topo :focus-visible,
+.hero :focus-visible,
+.banner :focus-visible,
+.secao--azul-escuro :focus-visible,
+.secao--azul :focus-visible,
+.secao--navy :focus-visible {
+  outline-color: #fff;
+}
+
+/* Dentro dos cartões (fundo branco) o foco volta a ser escuro */
+.livro summary:focus-visible {
+  outline-color: var(--azul-escuro);
+}
+
+
+/* 4. BOTÕES --------------------------------------------------------------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;            /* área de toque confortável no celular */
+  padding: 0.6rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao--verde {
+  background: var(--verde);
+  color: var(--navy);          /* texto escuro sobre verde = bom contraste */
+}
+
+.botao--verde:hover {
+  background: #45CF8C;
+}
+
+.botao--escuro {
+  background: var(--azul-escuro);
+  color: #fff;
+}
+
+.botao--escuro:hover {
+  background: var(--azul);
+}
+
+
+/* 5. CABEÇALHO E MENU ----------------------------------------------------- */
+.topo {
+  position: sticky;            /* menu acompanha a rolagem */
+  top: 0;
+  z-index: 50;
+  background: var(--navy);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.topo__interno {
+  display: flex;
+  flex-direction: column;      /* no celular: marca em cima, menu embaixo */
+  align-items: center;
+  gap: 0.15rem;
+  padding-block: 0.5rem;
+}
+
+.topo__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.topo__marca strong {
+  color: var(--verde);
+}
+
+.menu__lista {
+  display: flex;
+  flex-wrap: wrap;             /* se faltar espaço, quebra linha sem estourar */
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.menu__link:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.menu__link--ativo {
+  background: var(--claro);
+  color: var(--navy);
+}
+
+.menu__link--ativo:hover {
+  background: #fff;
+}
+
+
+/* 6. HERO ----------------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 24rem;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+/* A imagem ocupa todo o bloco e é "cortada" sem distorcer (object-fit) */
+.hero__imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% center;
+}
+
+/* Camada escura sobre a imagem: garante contraste do texto branco */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 31, 58, 0.9), rgba(6, 31, 58, 0.78));
+}
+
+.hero__conteudo {
+  position: relative;
+  z-index: 1;                  /* fica acima da camada escura */
+  padding-block: 3rem;
+}
+
+.hero__conteudo > * {
+  max-width: 34rem;
+}
+
+.hero__etiqueta {
+  margin-bottom: 0.5rem;
+  color: var(--verde);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem);   /* tamanho fluido */
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.hero__texto {
+  margin-bottom: 1.75rem;
+  font-size: 1.1rem;
+  color: var(--texto-claro);
+}
+
+
+/* 7. SEÇÕES E TÍTULOS ------------------------------------------------------ */
+.secao {
+  padding-block: var(--espaco-secao);
+}
+
+.secao--azul-escuro {
+  background: var(--azul-escuro);
+  color: #fff;
+}
+
+.secao--azul {
+  background: var(--azul);
+  color: #fff;
+}
+
+.secao--navy {
+  background: var(--navy);
+  color: var(--texto-claro);
+}
+
+.secao--clara {
+  background: var(--claro);
+  color: var(--texto);
+}
+
+.secao__titulo {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 0.9rem;
+  font-size: clamp(1.35rem, 1rem + 1.1vw, 1.8rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+/* Barrinha verde sob o título (detalhe de identidade) */
+.secao__titulo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--verde);
+}
+
+
+/* 8. SOBRE A BIBLIOTECA ---------------------------------------------------- */
+.sobre__grade {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.sobre__grade p {
+  margin: 0;
+}
+
+.sobre__figura {
+  margin: 0;
+}
+
+.sobre__figura img {
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.diferenciais {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 colunas no celular */
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.diferenciais figure {
+  margin: 0;
+}
+
+.diferenciais img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.diferenciais figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/* 9. BANNER ---------------------------------------------------------------- */
+.banner {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 16rem;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+.banner__imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% center;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 31, 58, 0.88), rgba(6, 31, 58, 0.8));
+}
+
+.banner__conteudo {
+  position: relative;
+  z-index: 1;
+  padding-block: 2.5rem;
+}
+
+.banner__conteudo > * {
+  max-width: 30rem;
+}
+
+.banner__conteudo h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.banner__conteudo p {
+  margin-bottom: 0;
+  color: var(--texto-claro);
+}
+
+
+/* 10. NOSSOS LIVROS -------------------------------------------------------- */
+.livros__aviso {
+  margin-top: -1rem;
+  margin-bottom: 1.75rem;
+  color: var(--texto-claro);
+  font-size: 0.9rem;
+}
+
+.livros__grade {
+  display: grid;
+  grid-template-columns: 1fr;              /* 1 coluna no celular */
+  gap: 1.5rem;
+}
+
+.livro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--raio);
+  background: #fff;
+  color: var(--texto);
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.livro__titulo {
+  min-height: 2.7em;                        /* alinha as capas entre cartões */
+  margin-bottom: 1rem;
+  color: var(--azul-escuro);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.livro__capa {
+  width: min(100%, 9rem);
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(6, 31, 58, 0.35);
+}
+
+.livro__resumo {
+  flex-grow: 1;                             /* empurra o botão para o fim do cartão */
+  margin: 1rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.livro__detalhes {
+  width: 100%;
+}
+
+/* "Saiba mais" usa <details>/<summary>: abre e fecha só com HTML, sem JavaScript */
+.livro__detalhes summary {
+  list-style: none;
+}
+
+.livro__detalhes summary::-webkit-details-marker {
+  display: none;
+}
+
+.livro__detalhes summary::after {
+  content: "+";
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+.livro__detalhes[open] summary::after {
+  content: "\2212";                         /* sinal de menos */
+}
+
+.livro__detalhes dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  background: var(--claro);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.livro__detalhes dt {
+  color: var(--azul-escuro);
+  font-weight: 700;
+}
+
+.livro__detalhes dd {
+  margin: 0;
+}
+
+
+/* 11. AS UNIDADES ---------------------------------------------------------- */
+.unidades__aviso {
+  margin-top: -1rem;
+  color: #C9D6E4;
+  font-size: 0.9rem;
+}
+
+.unidade {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  padding-block: 1.75rem;
+}
+
+.unidade + .unidade {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.unidade__imagem {
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.unidade__texto h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+}
+
+.unidade__texto p {
+  margin-bottom: 0.75rem;
+}
+
+.unidade__texto .unidade__horario {
+  margin-bottom: 0;
+  color: var(--verde);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+/* 12. CONTATOS ------------------------------------------------------------- */
+.contatos__grade {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contatos__texto p {
+  max-width: 36rem;
+  margin-bottom: 1rem;
+}
+
+.contatos__lista {
+  display: grid;
+  gap: 0.5rem;
+  overflow-wrap: anywhere;                  /* e-mails longos não estouram a tela */
+}
+
+.contatos__lista a {
+  color: var(--azul);
+  font-weight: 600;
+}
+
+.contatos__lista a:hover {
+  color: var(--azul-escuro);
+}
+
+.contatos__figura {
+  margin: 0;
+}
+
+.contatos__figura img {
+  border-radius: var(--raio);
+  box-shadow: 0 8px 22px rgba(3, 19, 37, 0.18);
+}
+
+
+/* 13. RODAPÉ --------------------------------------------------------------- */
+.rodape {
+  padding: 1.5rem 1rem;
+  background: #031325;
+  color: #C9D6E4;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.rodape p {
+  margin: 0;
+}
+
+
+/* 14. MEDIA QUERIES -------------------------------------------------------- */
+
+/* Telas muito pequenas (celulares compactos): reduz o espaçamento do menu */
+@media (max-width: 22.5em) {
+  .menu__link {
+    padding: 0 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---- Tablet: a partir de 600px ---- */
+@media (min-width: 37.5em) {
+  .diferenciais {
+    grid-template-columns: repeat(4, 1fr);   /* 4 colunas */
+  }
+
+  .livros__grade {
+    grid-template-columns: repeat(2, 1fr);   /* 2 colunas */
+  }
+
+  .sobre__grade {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sobre__figura {
+    grid-column: 1 / -1;                     /* imagem ocupa a linha toda... */
+    order: -1;                               /* ...e vai para cima dos textos */
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  .unidade {
+    grid-template-columns: minmax(0, 18rem) 1fr;   /* imagem à esquerda, texto à direita */
+    gap: 2rem;
+  }
+}
+
+/* ---- Desktop: a partir de 900px ---- */
+@media (min-width: 56.25em) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  /* Menu: marca à esquerda e links à direita, na mesma linha */
+  .topo__interno {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 0.4rem;
+  }
+
+  .menu__link {
+    padding: 0 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 34rem;
+  }
+
+  .hero::after {
+    background: linear-gradient(90deg, rgba(6, 31, 58, 0.95) 0%, rgba(6, 31, 58, 0.75) 45%, rgba(6, 31, 58, 0.05) 100%);
+  }
+
+  .banner {
+    min-height: 20rem;
+  }
+
+  .banner::after {
+    background: linear-gradient(90deg, rgba(6, 31, 58, 0.92) 0%, rgba(6, 31, 58, 0.7) 50%, rgba(6, 31, 58, 0) 100%);
+  }
+
+  /* Sobre: texto | imagem | texto, como no protótipo */
+  .sobre__grade {
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 2rem;
+  }
+
+  .sobre__figura {
+    grid-column: auto;
+    order: 0;
+    max-width: none;
+  }
+
+  .livros__grade {
+    grid-template-columns: repeat(3, 1fr);   /* 3 colunas x 2 linhas, como no protótipo */
+    gap: 2rem;
+  }
+
+  .unidade {
+    grid-template-columns: minmax(0, 22rem) 1fr;
+    gap: 3rem;
+  }
+
+  .contatos__grade {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+  }
+}
+
+
+/* 15. PREFERÊNCIAS DO USUÁRIO ---------------------------------------------- */
+/* Quem configura o sistema para reduzir animações não verá rolagem suave */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0F6B42"/><stop offset="1" stop-color="#061F3A"/></linearGradient></defs>
+<rect width="300" height="420" fill="url(#g)"/>
+<rect x="0" y="0" width="22" height="420" fill="#000" opacity=".18"/>
+<rect x="40" y="36" width="220" height="40" rx="6" fill="#fff" opacity=".16"/>
+<text x="150" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#fff">REDES</text>
+<line x1="150" y1="170" x2="95" y2="240" stroke="#fff" stroke-width="5"/><line x1="150" y1="170" x2="205" y2="240" stroke="#fff" stroke-width="5"/><line x1="95" y1="240" x2="150" y2="290" stroke="#fff" stroke-width="5"/><line x1="205" y1="240" x2="150" y2="290" stroke="#fff" stroke-width="5"/><line x1="150" y1="170" x2="60" y2="170" stroke="#fff" stroke-width="5"/><line x1="150" y1="170" x2="240" y2="170" stroke="#fff" stroke-width="5"/><line x1="95" y1="240" x2="60" y2="170" stroke="#fff" stroke-width="5"/><line x1="205" y1="240" x2="240" y2="170" stroke="#fff" stroke-width="5"/><circle cx="150" cy="170" r="15" fill="#fff"/><circle cx="95" cy="240" r="15" fill="#fff"/><circle cx="205" cy="240" r="15" fill="#fff"/><circle cx="150" cy="290" r="15" fill="#fff"/><circle cx="60" cy="170" r="15" fill="#fff"/><circle cx="240" cy="170" r="15" fill="#fff"/>
+<rect x="40" y="352" width="220" height="3" fill="#fff" opacity=".5"/>
+<text x="150" y="384" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.5" fill="#fff" opacity=".9">BIBLIOTECA DIGITAL</text>
+</svg>

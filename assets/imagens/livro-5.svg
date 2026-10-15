@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B5CAB"/><stop offset="1" stop-color="#4C8FD6"/></linearGradient></defs>
+<rect width="300" height="420" fill="url(#g)"/>
+<rect x="0" y="0" width="22" height="420" fill="#000" opacity=".18"/>
+<rect x="40" y="36" width="220" height="40" rx="6" fill="#fff" opacity=".16"/>
+<text x="150" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#fff">WEB</text>
+<rect x="55" y="150" width="190" height="130" rx="10" fill="#fff"/><rect x="55" y="150" width="190" height="28" rx="10" fill="#EAF1F8"/><circle cx="76" cy="164" r="5" fill="#0B5CAB"/><circle cx="94" cy="164" r="5" fill="#2BB673"/><rect x="75" y="196" width="80" height="62" rx="5" fill="#0B5CAB" opacity=".85"/><rect x="168" y="196" width="60" height="10" rx="5" fill="#0B5CAB" opacity=".5"/><rect x="168" y="216" width="60" height="10" rx="5" fill="#0B5CAB" opacity=".5"/><rect x="168" y="236" width="40" height="10" rx="5" fill="#0B5CAB" opacity=".5"/>
+<rect x="40" y="352" width="220" height="3" fill="#fff" opacity=".5"/>
+<text x="150" y="384" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.5" fill="#fff" opacity=".9">BIBLIOTECA DIGITAL</text>
+</svg>

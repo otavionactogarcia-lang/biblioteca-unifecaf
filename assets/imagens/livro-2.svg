@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E9E63"/><stop offset="1" stop-color="#0F6B42"/></linearGradient></defs>
+<rect width="300" height="420" fill="url(#g)"/>
+<rect x="0" y="0" width="22" height="420" fill="#000" opacity=".18"/>
+<rect x="40" y="36" width="220" height="40" rx="6" fill="#fff" opacity=".16"/>
+<text x="150" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#fff">DADOS</text>
+<ellipse cx="150" cy="150" rx="62" ry="18" fill="#fff"/><rect x="88" y="150" width="124" height="38" fill="#fff"/><ellipse cx="150" cy="188" rx="62" ry="18" fill="#fff"/><ellipse cx="150" cy="150" rx="62" ry="18" fill="#EAF1F8"/><ellipse cx="150" cy="205" rx="62" ry="18" fill="#fff"/><rect x="88" y="205" width="124" height="38" fill="#fff"/><ellipse cx="150" cy="243" rx="62" ry="18" fill="#fff"/><ellipse cx="150" cy="205" rx="62" ry="18" fill="#EAF1F8"/><ellipse cx="150" cy="260" rx="62" ry="18" fill="#fff"/><rect x="88" y="260" width="124" height="38" fill="#fff"/><ellipse cx="150" cy="298" rx="62" ry="18" fill="#fff"/><ellipse cx="150" cy="260" rx="62" ry="18" fill="#EAF1F8"/>
+<rect x="40" y="352" width="220" height="3" fill="#fff" opacity=".5"/>
+<text x="150" y="384" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.5" fill="#fff" opacity=".9">BIBLIOTECA DIGITAL</text>
+</svg>

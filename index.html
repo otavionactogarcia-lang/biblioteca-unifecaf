@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Faz o layout se ajustar à largura real da tela do smartphone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca Digital UniFECAF: livros, materiais acadêmicos e conteúdos de apoio à aprendizagem em um só lugar.">
+  <meta name="theme-color" content="#061F3A">
+
+  <title>Biblioteca Digital UniFECAF</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/imagens/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="topo">
+
+  <!-- Atalho para quem navega pelo teclado ou leitor de tela pular o menu -->
+  <a class="pular-menu" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <!-- ============================ CABEÇALHO / MENU ============================ -->
+  <header class="topo">
+    <div class="topo__interno container">
+      <a class="topo__marca" href="#topo">
+        <img src="assets/imagens/favicon.svg" alt="" width="32" height="32">
+        <span>Biblioteca Digital <strong>UniFECAF</strong></span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <ul class="menu__lista">
+          <li><a class="menu__link" href="#topo">Início</a></li>
+          <li><a class="menu__link" href="#sobre">Sobre</a></li>
+          <li><a class="menu__link" href="#livros">Livros</a></li>
+          <li><a class="menu__link" href="#unidades">Unidades</a></li>
+          <li><a class="menu__link" href="#contatos">Contatos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ================================ HERO ================================== -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <img class="hero__imagem" src="assets/imagens/hero.svg" alt="" width="1600" height="640">
+
+      <div class="hero__conteudo container">
+        <p class="hero__etiqueta">Biblioteca Digital UniFECAF</p>
+        <h1 id="hero-titulo">Bora encontrar seu próximo material de estudo?</h1>
+        <p class="hero__texto">
+          Dá uma olhada nos livros e conteúdos de apoio. Escolhe um tema e começa por onde fizer sentido pra você.
+        </p>
+        <a class="botao botao--verde" href="#livros">Ver livros</a>
+      </div>
+    </section>
+
+    <!-- ============================ SOBRE A BIBLIOTECA ======================== -->
+    <section class="secao secao--azul-escuro" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <h2 class="secao__titulo" id="sobre-titulo">Uma biblioteca pra sua rotina</h2>
+
+        <div class="sobre__grade">
+          <p>
+            Sabe quando você precisa de um material e não lembra nem por onde começar? A ideia
+            aqui é deixar livros e conteúdos de apoio reunidos num lugar fácil de consultar,
+            seja pelo computador ou pelo celular.
+          </p>
+
+          <figure class="sobre__figura">
+            <img src="assets/imagens/sobre.svg"
+                 alt="Notebook aberto ao lado de uma pilha de livros e de uma planta, representando o estudo digital"
+                 width="800" height="560">
+          </figure>
+
+          <p>
+            Você pode passear pelo acervo, conhecer alguns títulos e encontrar um caminho
+            para continuar seus estudos. Sem mistério: é só escolher um assunto e explorar.
+          </p>
+        </div>
+
+        <!-- Quatro diferenciais da biblioteca -->
+        <ul class="diferenciais">
+          <li>
+            <figure>
+              <img src="assets/imagens/thumb-acervo.svg" alt="Ilustração de uma pilha de livros" width="400" height="300">
+              <figcaption>Materiais num só lugar</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/thumb-estudo.svg" alt="Ilustração de dois balões de conversa" width="400" height="300">
+              <figcaption>Estudar junto também vale</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/thumb-acesso.svg" alt="Ilustração de um relógio com a indicação 24 horas" width="400" height="300">
+              <figcaption>No seu horário</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="assets/imagens/thumb-apoio.svg" alt="Ilustração de uma boia salva-vidas, símbolo de ajuda" width="400" height="300">
+              <figcaption>Precisou? Peça ajuda</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================ BANNER ================================ -->
+    <section class="banner" aria-labelledby="banner-titulo">
+      <img class="banner__imagem" src="assets/imagens/destaque.svg" alt="" width="1600" height="420">
+
+      <div class="banner__conteudo container">
+        <h2 id="banner-titulo">Sempre tem algo novo pra descobrir</h2>
+        <p>
+          Tem título de tecnologia, gestão e outros assuntos pra dar uma força nos estudos.
+          Escolhe um e começa a explorar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== NOSSOS LIVROS =========================== -->
+    <section class="secao secao--azul" id="livros" aria-labelledby="livros-titulo">
+      <div class="container">
+        <h2 class="secao__titulo" id="livros-titulo">Nossos livros</h2>
+        <p class="livros__aviso">Os títulos e descrições são exemplos criados para este projeto.</p>
+
+        <div class="livros__grade">
+
+          <article class="livro">
+            <h3 class="livro__titulo">Algoritmos e Lógica de Programação</h3>
+            <img class="livro__capa" src="assets/imagens/livro-1.svg"
+                 alt="Capa azul com o símbolo de código, do livro Algoritmos e Lógica de Programação"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              Introdução ao raciocínio lógico, fluxogramas e estruturas de controle,
+              com exercícios para praticar desde o início.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Programação</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Iniciante</dd>
+              </dl>
+            </details>
+          </article>
+
+          <article class="livro">
+            <h3 class="livro__titulo">Banco de Dados Relacionais</h3>
+            <img class="livro__capa" src="assets/imagens/livro-2.svg"
+                 alt="Capa verde com o desenho de um banco de dados, do livro Banco de Dados Relacionais"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              Modelagem, normalização e consultas SQL explicadas passo a passo,
+              com exemplos do dia a dia.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Dados</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Intermediário</dd>
+              </dl>
+            </details>
+          </article>
+
+          <article class="livro">
+            <h3 class="livro__titulo">Engenharia de Software</h3>
+            <img class="livro__capa" src="assets/imagens/livro-3.svg"
+                 alt="Capa azul-escura com uma engrenagem, do livro Engenharia de Software"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              Ciclo de vida, requisitos, metodologias ágeis e boas práticas
+              para desenvolver sistemas de qualidade.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Engenharia</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Intermediário</dd>
+              </dl>
+            </details>
+          </article>
+
+          <article class="livro">
+            <h3 class="livro__titulo">Redes de Computadores</h3>
+            <img class="livro__capa" src="assets/imagens/livro-4.svg"
+                 alt="Capa verde-escura com pontos conectados, do livro Redes de Computadores"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              Fundamentos de protocolos, endereçamento e segurança para entender
+              como a internet funciona.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Redes</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Intermediário</dd>
+              </dl>
+            </details>
+          </article>
+
+          <article class="livro">
+            <h3 class="livro__titulo">Design Web na Prática</h3>
+            <img class="livro__capa" src="assets/imagens/livro-5.svg"
+                 alt="Capa azul com uma janela de navegador, do livro Design Web na Prática"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              HTML, CSS e responsividade aplicados em projetos reais,
+              com foco em acessibilidade.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Web</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Iniciante</dd>
+              </dl>
+            </details>
+          </article>
+
+          <article class="livro">
+            <h3 class="livro__titulo">Introdução à Inteligência Artificial</h3>
+            <img class="livro__capa" src="assets/imagens/livro-6.svg"
+                 alt="Capa escura com uma rede neural, do livro Introdução à Inteligência Artificial"
+                 width="300" height="420">
+            <p class="livro__resumo">
+              Conceitos de aprendizado de máquina, classificação e ética em IA,
+              com exemplos acessíveis.
+            </p>
+            <details class="livro__detalhes">
+              <summary class="botao botao--escuro">Saiba mais</summary>
+              <dl>
+                <dt>Área</dt><dd>Inteligência Artificial</dd>
+                <dt>Formato</dt><dd>E-book</dd>
+                <dt>Nível</dt><dd>Intermediário</dd>
+              </dl>
+            </details>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== AS UNIDADES ============================ -->
+    <section class="secao secao--navy" id="unidades" aria-labelledby="unidades-titulo">
+      <div class="container">
+        <h2 class="secao__titulo" id="unidades-titulo">Um lugar pra estudar</h2>
+        <p class="unidades__aviso">Os espaços e horários abaixo são exemplos deste protótipo.</p>
+
+        <article class="unidade">
+          <img class="unidade__imagem" src="assets/imagens/unidade-1.svg"
+               alt="Ilustração da fachada da Unidade Centro: prédio azul com janelas e duas árvores"
+               width="600" height="420">
+          <div class="unidade__texto">
+            <h3>Unidade 1 · Centro</h3>
+            <p>
+              Espaço de estudo com salas individuais e em grupo, computadores para pesquisa
+              e atendimento presencial da equipe da biblioteca.
+            </p>
+            <p class="unidade__horario">Segunda a sexta, das 8h às 22h · Sábado, das 8h às 14h</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img class="unidade__imagem" src="assets/imagens/unidade-2.svg"
+               alt="Ilustração da fachada da Unidade Zona Sul: prédio verde com janelas e duas árvores"
+               width="600" height="420">
+          <div class="unidade__texto">
+            <h3>Unidade 2 · Zona Sul</h3>
+            <p>
+              Ambiente tranquilo, com mesas para estudo coletivo, acervo físico de apoio
+              e acesso rápido à rede Wi-Fi para consultar a biblioteca digital.
+            </p>
+            <p class="unidade__horario">Segunda a sexta, das 8h às 21h</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img class="unidade__imagem" src="assets/imagens/unidade-3.svg"
+               alt="Ilustração da fachada da Unidade Zona Leste: prédio azul-escuro com janelas e duas árvores"
+               width="600" height="420">
+          <div class="unidade__texto">
+            <h3>Unidade 3 · Zona Leste</h3>
+            <p>
+              Unidade com laboratório de informática, orientação para trabalhos acadêmicos
+              e apoio no uso das bases de pesquisa e dos livros digitais.
+            </p>
+            <p class="unidade__horario">Segunda a sexta, das 9h às 20h</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================ CONTATOS ============================== -->
+    <section class="secao secao--clara" id="contatos" aria-labelledby="contatos-titulo">
+      <div class="container contatos__grade">
+        <div class="contatos__texto">
+          <h2 class="secao__titulo" id="contatos-titulo">Precisa de uma mão?</h2>
+
+          <p>
+            Ficou na dúvida sobre algum material ou quer sugerir um livro? Neste exemplo, você
+            pode falar com a equipe pelos canais abaixo.
+          </p>
+
+          <ul class="contatos__lista">
+            <li><strong>E-mail de exemplo:</strong> <a href="mailto:biblioteca@exemplo.edu.br">biblioteca@exemplo.edu.br</a></li>
+            <li><strong>Telefone de exemplo:</strong> <a href="tel:+551100000000">(11) 0000-0000</a></li>
+            <li><strong>Atendimento:</strong> segunda a sexta, das 8h às 20h</li>
+          </ul>
+        </div>
+
+        <figure class="contatos__figura">
+          <img src="assets/imagens/contato.svg"
+               alt="Mapa estilizado com um marcador de localização e um envelope"
+               width="600" height="420">
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================ RODAPÉ ================================== -->
+  <footer class="rodape">
+    <p>&copy; 2026 Biblioteca Digital UniFECAF · Trabalho acadêmico de Design Web · Conteúdo demonstrativo</p>
+  </footer>
+
+</body>
+
+</html>
